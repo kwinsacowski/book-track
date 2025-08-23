@@ -1,32 +1,58 @@
-/* Dark Academia Theme */
+/* ------------------------------
+   Stormy Theme Variables
+--------------------------------*/
+:root {
+  --bg-main: linear-gradient(135deg, #1e1f26, #2c3e50); /* stormy gradient */
+  --bg-nav: #0d0d0f;           /* almost black navbar */
+  --bg-card: #2a2e37;          /* steel gray */
+  --text-main: #e0e6ed;        /* pale storm-cloud white */
+  --text-accent: #4db8ff;      /* electric storm blue */
+  --text-accent-hover: #1a8cff;/* deeper lightning blue */
+  --border-muted: #3e4650;     /* muted steel */
+}
+
+/* ------------------------------
+   Global
+--------------------------------*/
 body {
   font-family: "Georgia", serif;
-  background-color: #2e2a26;
-  color: #f5f2e7;
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 
+/* ------------------------------
+   Navbar
+--------------------------------*/
 .navbar {
-  background-color: #1d1a16;
+  background-color: var(--bg-nav) !important;
+  border-bottom: 2px solid var(--text-accent);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
 }
 
-.navbar-brand, 
-.nav-link {
-  color: #f5f2e7 !important;
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: var(--text-main) !important;
+  font-weight: 500;
 }
 
-.navbar-brand:hover, 
-.nav-link:hover {
-  color: #d4af37 !important; /* gold highlight */
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: var(--text-accent) !important;
+  text-shadow: 0 0 6px var(--text-accent);
 }
 
+/* ------------------------------
+   Hero Section
+--------------------------------*/
 .hero {
-  background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  background: url(coffee.jpg)
+    no-repeat center center/cover;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #f5f2e7;
+  color: var(--text-main);
   position: relative;
 }
 
@@ -35,19 +61,22 @@ body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(30, 25, 20, 0.7); /* overlay */
+  background-color: rgba(10, 15, 25, 0.65); /* stormy overlay */
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
   max-width: 700px;
+  padding: 1rem;
 }
 
 .hero h1 {
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: var(--text-accent);
+  text-shadow: 0 0 10px rgba(77,184,255,0.8);
 }
 
 .hero p {
@@ -55,15 +84,80 @@ body {
   margin-bottom: 1.5rem;
 }
 
-.btn-custom {
-  background-color: #d4af37;
-  color: #1d1a16;
-  border: none;
+/* ------------------------------
+   Buttons
+--------------------------------*/
+.btn-custom,
+.btn {
+  background-color: var(--text-accent) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  border: none !important;
   padding: 0.75rem 1.5rem;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-.btn-custom:hover {
-  background-color: #b5912e;
-  color: #fff;
+.btn-custom:hover,
+.btn:hover {
+  background-color: var(--text-accent-hover) !important;
+  box-shadow: 0 0 12px var(--text-accent);
+  transform: scale(1.05);
+}
+
+/* ------------------------------
+   Cards
+--------------------------------*/
+.tracking-card,
+.card {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-muted) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+.card-title {
+  color: var(--text-accent) !important;
+  font-weight: bold;
+  text-shadow: 0 0 6px rgba(77,184,255,0.6);
+}
+
+/* ------------------------------
+   Forms (Contact Page)
+--------------------------------*/
+.form-control {
+  background-color: #1e232d !important;
+  border: 1px solid var(--border-muted) !important;
+  color: var(--text-main) !important;
+  border-radius: 6px !important;
+}
+
+.form-control:focus {
+  background-color: #1e232d !important;
+  border-color: var(--text-accent) !important;
+  color: var(--text-main) !important;
+  box-shadow: 0 0 0 0.25rem rgba(77,184,255,0.25) !important;
+}
+
+label {
+  color: var(--text-main) !important;
+}
+
+/* ------------------------------
+   Responsive
+--------------------------------*/
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
 }
