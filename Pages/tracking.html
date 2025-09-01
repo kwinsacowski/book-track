@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookish - Track Your Reading</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/Styles/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/Pages/index.html">Bookish</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/Pages/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/Pages/tracking.html">Tracking</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/Pages/library.html">My Library</a></li>
+          <li class="nav-item"><a class="nav-link" href="/Pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tracking Section -->
+  <main class="container py-5">
+    <h2 class="text-center mb-4">Track Your Reading</h2>
+    <p class="text-center">Log books read, pages turned, words devoured, and audiobooks listened to.</p>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card tracking-card h-100" id="classic-books" style="cursor: pointer;">
+          <div class="card-body">
+            <h5 class="card-title">Books Read</h5>
+            <p class="card-text">Keep track of all the books you’ve finished this year.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card tracking-card h-100" id="pages-and-words" style="cursor: pointer;">
+          <div class="card-body">
+            <h5 class="card-title">Pages & Words</h5>
+            <p class="card-text">Log your daily reading progress by page or word count.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card tracking-card h-100" id="audio-books" style="cursor: pointer;">
+          <div class="card-body">
+            <h5 class="card-title">Audiobooks</h5>
+            <p class="card-text">Track hours of audiobooks you’ve listened to.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Book Form-->
+    <div class="row g-4 mt-4 hidden" id="classicBooksFormRow">
+  <div class="col-12" >
+    <div class="card tracking-card h-100 p-4">
+      <h5 class="card-title mb-3">Add a Classic Book you Consumed</h5>
+      <form id="classic-book-form">
+        <div class="mb-3">
+          <label for="book-title" class="form-label">Book Title</label>
+          <input type="text" class="form-control" id="book-title" name="book-title" placeholder="Enter book title" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="classic-book-submit-button">Add Book</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <!--Audiobook Form-->
+    <div class="row g-4 mt-4 hidden" id="audioBooksForm">
+  <div class="col-12" >
+    <div class="card tracking-card h-100 p-4">
+      <h5 class="card-title mb-3">Add a Audio Book you Enjoyed</h5>
+      <form id="audio-book-form">
+        <div class="mb-3">
+          <label for="book-title" class="form-label">Book Title</label>
+          <input type="text" class="form-control" id="book-title" name="book-title" placeholder="Enter book title" required>
+          <label for="book-length" class="form-label">Book Length (in hours)</label>
+          <input type="number" class="form-control" id="book-length" name="book-length">
+        </div>
+        <button type="submit" class="btn btn-primary" id="audio-book-submit-button">Add Book</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/App/app.js"></script>
+</body>
+</html>
